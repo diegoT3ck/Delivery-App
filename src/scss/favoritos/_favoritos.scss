@@ -1,0 +1,23 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.favoritos {
+    background-color: v.$grisClaro;
+    padding: v.$separacion 0;
+    &__heading {
+        text-align: center;
+        color: v.$secundario;
+    }
+    &__grid {
+        @include m.tablet {
+           display: grid;
+           grid-template-columns: 2fr 3fr;
+           gap: 2rem;
+           align-items: center;
+         }
+        @include m.desktop {
+            @include m.grid(2, 4rem)
+         }
+    }
+
+}
